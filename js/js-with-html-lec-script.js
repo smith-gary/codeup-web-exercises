@@ -10,5 +10,5 @@ console.log(returnOfPrompt);
 let returnOfConfirm = confirm('Got plans?');
 console.log(returnOfConfirm);
 
-let friPlansInvite = confirm('Well even if you do or don\'t have plans, want to hang out?');
+let friPlansInvite = confirm('Well I see you said ' + returnOfConfirm + ' you have plans, want to hang out anyway??');
 console.log(friPlansInvite);
