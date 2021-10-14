@@ -38,6 +38,7 @@ function analyzeColor (color) {
     console.log(analyzeColor('red'));
     console.log(analyzeColor('cyan'));
     console.log(analyzeColor('yellow'));
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -50,7 +51,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-// console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
     /**
  * TODO:
  * Refactor your above function to use a switch-case statement
@@ -116,41 +117,44 @@ function analyzeColor (color) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-let luckyNumber = Math.floor(Math.random() * 5);
+
 function calculateTotal (number, totalAmount) {
 
     switch (number) {
         case 0:
-            number = totalAmount;
-            console.log('Sorry no discount');
+            return totalAmount;
             break;
         case 1:
-            number = totalAmount - (0.10 * totalAmount);
+            return totalAmount - (0.10 * totalAmount);
             // console.log(luckyNumber);
             break;
         case 2:
-            number = totalAmount - (0.25 * totalAmount);
+            return totalAmount - (0.25 * totalAmount);
             // console.log(luckyNumber);
             break;
         case 3:
-            number = totalAmount - (0.35 * totalAmount);
+            return totalAmount - (0.35 * totalAmount);
             // console.log(luckyNumber);
             break;
         case 4:
-            number = totalAmount - (0.50 * totalAmount);
+            return totalAmount - (0.50 * totalAmount);
             // console.log(luckyNumber);
             break;
         case 5:
-            number = totalAmount - totalAmount;
+            return totalAmount - totalAmount;
             // console.log(luckyNumber);
             break;
         default:
             console.log('Your number is not 1 - 5, please get a new number for possible savings!');
             break;
     }
-    return number;
 }
-    console.log(calculateTotal(luckyNumber, 100));
+    console.log(calculateTotal(0, 100));
+    console.log(calculateTotal(1, 100));
+    console.log(calculateTotal(2, 100));
+    console.log(calculateTotal(3, 100));
+    console.log(calculateTotal(4, 100));
+    console.log(calculateTotal(5, 100));
 
 /**
  * TODO:
@@ -160,8 +164,8 @@ function calculateTotal (number, totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-luckyNumber = Math.floor(Math.random() * 6);
-let totalBill = Number(prompt('What was your total bill?')).toFixed();
+const luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = parseFloat(prompt('What was your total bill?')).toFixed();
 let discount = calculateTotal(luckyNumber, totalBill);
 if (luckyNumber >= 1 && luckyNumber <= 5) {
     alert(`Your lucky number was ${luckyNumber}, your bill before discount was $${totalBill}, Your new total is $${discount}!!`);
