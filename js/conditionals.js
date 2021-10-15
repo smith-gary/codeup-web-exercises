@@ -195,9 +195,9 @@ function numberQuestion () {
     if (question === true) {
         let userNumber = Number(prompt('Sweet what number would you like to enter?'));
         if (userNumber <= Infinity) {
-            let evenOrOdd = alert(userNumber % 2 === 0 ? `${userNumber} is even` : `${userNumber} is odd`);
+            let evenOrOdd = alert((userNumber % 2 === 0) ? `${userNumber} is even` : `${userNumber} is odd`);
             let plusOneHundred = alert(`${userNumber} plus 100 is ` + (userNumber + 100));
-            let posOrNeg = alert(userNumber >= 0 ? `${userNumber} is positive` : `${userNumber} is negative`);
+            let posOrNeg = alert((userNumber > 0) ? `${userNumber} is positive` : `${userNumber} is negative`);
         } else {
             alert(`Unfortunately that is not a number....`);
         }
