@@ -14,6 +14,7 @@
 //     const hadBreakfastMessage = (hadBreakfast) ? 'I had breakfast this morning.' : 'I didn\'t have breakfast this morning.';
 //     console.log(hadBreakfastMessage);
 
+    /*
     function typeCheck (input) {
         if (typeof input === 'string') {
             return 'Haha, it\'s a string of string!'
@@ -27,5 +28,9 @@
     console.log(typeCheck(isNaN()));
     console.log(typeCheck(!false * 3));
     console.log(typeCheck(4 + '4'));
+
+
+*/
+
 
 })();
