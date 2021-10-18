@@ -1,14 +1,14 @@
 'use strict';
 (function () {
-//   function multiplyByTwo () {
-//       let number = 2;
-//
-//       while (number <= 65536) {
-//           console.log(number);
-//           number *= 2;
-//       }
-//   }
-// multiplyByTwo();
+  function multiplyByTwo () {
+      let number = 2;
+
+      while (number <= 65536) {
+          console.log(number);
+          number *= 2;
+      }
+  }
+multiplyByTwo();
 
     const allCones = Math.floor(Math.random() * 50) + 50;
   function iceCream (inventory) {
