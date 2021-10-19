@@ -7,7 +7,7 @@
      * 'names'.
      */
 
-    let names = ['Tom', 'Richard', 'Harry', 'Bob'];
+    let names = ['Every', 'Tom', 'Richard', 'Harry'];
 
     /**
      * TODO:
@@ -72,7 +72,9 @@
     }
 
     console.log(first([1, 2, 3, 4, 5])); // returns 1
+    console.log(first(names)); // returns 1
     console.log(second([1, 2, 3, 4, 5])); // returns 2
+    console.log(second(names)); // returns 2
+    console.log(last(names)); // return 5
     console.log(last([1, 2, 3, 4, 5])); // return 5
-
 })();
