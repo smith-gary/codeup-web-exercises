@@ -31,7 +31,7 @@
 
 
 */
-
+/*
     function fizzBuzz () {
         for (let i = 1; i <= 100; i++) {
             // console.log(i);
@@ -51,4 +51,11 @@
         };
     };
     fizzBuzz();
+    */
+
+    function secondToLast (arr) {
+        let newArr = arr.slice(-2, -1);
+        return newArr;
+    }
+    console.log(secondToLast([1, 2, 3, 4, 5]));
 })();
