@@ -52,10 +52,21 @@
     };
     fizzBuzz();
     */
-
+    /*
     function secondToLast (arr) {
         let newArr = arr.slice(-2, -1);
         return newArr;
     }
     console.log(secondToLast([1, 2, 3, 4, 5]));
+     */
+
+    function moveToEnd(arr) {
+        let copyArr = arr.slice();
+        let firstIndex = copyArr.shift();
+        copyArr.push(firstIndex);
+        return copyArr;
+    }
+
+    console.log(moveToEnd([1, 2, 3, 4]));
+    console.log(moveToEnd(['roll', 'rock', 'and']));
 })();
