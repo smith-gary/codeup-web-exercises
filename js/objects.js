@@ -42,7 +42,7 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -51,7 +51,8 @@
     shoppers.forEach(function (shopper) {
         if (shopper.amount > 200) {
             let newAmount = shopper.amount - (shopper.amount * .12);
-            console.log(`${shopper.name} you spent $${shopper.amount} this qualifies for a discount, 
+            let discountAmount = (shopper.amount * .12);
+            console.log(`${shopper.name} you spent $${shopper.amount} this qualifies for a discount of $${discountAmount.toFixed(2)}, 
             your new total is $${newAmount.toFixed(2)}!`);
         } else {
             console.log(`${shopper.name} your current total is $${shopper.amount}.`)
