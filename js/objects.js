@@ -174,12 +174,12 @@ shoppers.checkDiscount();
     }
     books2.push(CreateBook());
     CreateBook('Hello', 'Tim', 'Higgins');
-    // CreateBook(books);
+    // CreateBook(books); // this is paired with line 184
 
     console.log(books2);
     books2.showBookInfo = function() {
         books2.forEach(function(book, i) {
-            // if (book === []) {
+            // if (book === []) { // This line is if I were to add the books array
             console.log(`\n Book # ${i + 1} \n Title: ${book.title} \n Author: ${book.author.firstName} ${book.author.lastName} \n --- `);
             // console.log(`Title: ${books[i].title}`);
             // console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
@@ -188,7 +188,5 @@ shoppers.checkDiscount();
         });
     }
     books2.showBookInfo();
-    // books2.push(CreateBook(books));
-    // books2.showBookInfo();
-    // console.log(books2[0].title);
+
 })();
