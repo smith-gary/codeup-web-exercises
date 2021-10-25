@@ -60,6 +60,7 @@
     console.log(secondToLast([1, 2, 3, 4, 5]));
      */
 
+    /*
     function moveToEnd(arr) {
         let copyArr = arr.slice();
         let firstIndex = copyArr.shift();
@@ -69,4 +70,21 @@
 
     console.log(moveToEnd([1, 2, 3, 4]));
     console.log(moveToEnd(['roll', 'rock', 'and']));
+     */
+const gyarados = {
+    type: {
+        firstType: 'Water',
+        secondType: 'flying',
+    },
+    height: 21,
+    weight: 518,
+    category: 'Atrocious',
+    abilities: 'Intimidate',
+    weaknesses: {
+        firstWeakness: 'Electric',
+        secondWeakness: 'Rock',
+    },
+    evolutions: 'Magikarp',
+}
+
 })();
