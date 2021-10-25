@@ -72,18 +72,12 @@
     console.log(moveToEnd(['roll', 'rock', 'and']));
      */
 const gyarados = {
-    type: {
-        firstType: 'Water',
-        secondType: 'flying',
-    },
+    type: ['Water','flying'],
     height: 21,
     weight: 518,
     category: 'Atrocious',
     abilities: 'Intimidate',
-    weaknesses: {
-        firstWeakness: 'Electric',
-        secondWeakness: 'Rock',
-    },
+    weaknesses: ['Electric', 'Rock'],
     evolutions: 'Magikarp',
 }
 
