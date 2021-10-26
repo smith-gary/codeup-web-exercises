@@ -71,14 +71,51 @@
     console.log(moveToEnd([1, 2, 3, 4]));
     console.log(moveToEnd(['roll', 'rock', 'and']));
      */
-const gyarados = {
-    type: ['Water','flying'],
-    height: 21,
-    weight: 518,
-    category: 'Atrocious',
-    abilities: 'Intimidate',
-    weaknesses: ['Electric', 'Rock'],
-    evolutions: 'Magikarp',
-}
+    /*
+    const gyarados = {
+        name: 'Gyarados',
+        type: ['Water','Flying'],
+        height: 21,
+        weight: 518,
+        category: 'Atrocious',
+        abilities: 'Intimidate',
+        weaknesses: ['Electric', 'Rock'],
+        evolutions: 'Magikarp'
+    }
+    */
+
+   const wrestlers = [
+        {
+            name: "Bret Hart",
+            nationality: "Canadian"
+        }, {
+            name: "Shawn Michaels",
+            nationality: "American"
+        }, {
+            name: "Christian Cage",
+            nationality: "Canadian"
+        }, {
+            name: "Keiji Mutoh",
+            nationality: "Japanese"
+        }, {
+            name: "Eddy Guerrero",
+            nationality: "American"
+        }, {
+            name: "Owen Hart",
+            nationality: "Canadian"
+        }
+    ];
+
+    const nationality = function(arr) {
+        let canadianWrestlers = [];
+        arr.forEach(function (wrestler) {
+        if (wrestler.nationality === 'Canadian') {
+            canadianWrestlers.push(wrestler);
+        }
+    })
+        return canadianWrestlers;
+
+    }
+    console.log(nationality(wrestlers));
 
 })();
