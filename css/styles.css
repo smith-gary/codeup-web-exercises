@@ -1,4 +1,114 @@
-.fancy-header {
-    color: purple;
+h1 {
+    color: black;
     text-decoration: underline;
+    font-family: 'PT Serif', serif;
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+}
+.head-image {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../img/light_matrix.jpeg");
+    background-size: auto;
+}
+h2 {
+    color: black;
+    text-decoration: underline;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    background-color: lightgrey;
+    font-family: 'Zen Kurenaido', sans-serif;
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../img/background-img.jpeg");
+    font-weight: bolder;
+    font-size: 20px;
+}
+p {
+    font-size: 2em;
+}
+main {
+    font-size: 50px;
+    color: purple;
+    font-weight: bolder;
+}
+#values-process-vision {
+    text-align: center;
+
+}
+ul {
+    list-style-type: lower-greek;
+    display: inline-block;
+}
+ol {
+    display: inline-block;
+}
+
+#company-vision {
+    text-align: center;
+}
+#pictures-top {
+    display: flex;
+    justify-content: space-between;
+}
+#pictures-bottom {
+    float: top;
+    display: flex;
+    justify-content: space-evenly;
+}
+#product-info {
+    text-align: center;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+#top-row {
+    color: black;
+}
+#lead-column  {
+    color: black;
+}
+td {
+    padding: 10px;
+    font-size: 50px;
+}
+tr {
+    padding: 10px;
+    font-size: 70px;
+}
+#quality {
+    font-size: 30px;
+    color: black;
+}
+footer {
+    text-align: center;
+    font-size: 2em;
+}
+/* unvsited link */
+a:link {
+    color:blue;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:purple;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:yellow;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:black;
+}
+strong {
+    color: green;
+    font-size: larger;
 }
