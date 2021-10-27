@@ -83,7 +83,7 @@
         evolutions: 'Magikarp'
     }
     */
-
+    /*
    const wrestlers = [
         {
             name: "Bret Hart",
@@ -117,5 +117,15 @@
 
     }
     console.log(nationality(wrestlers));
+    */
+
+    let circle = {
+        radius: 36
+    }
+
+    let area = Math.PI * (Math.pow(circle.radius, 2));
+    console.log(Math.ceil(area));
+
+
 
 })();
