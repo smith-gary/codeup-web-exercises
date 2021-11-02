@@ -118,14 +118,50 @@
     }
     console.log(nationality(wrestlers));
     */
-
+/*
     let circle = {
         radius: 36
     }
 
     let area = Math.PI * (Math.pow(circle.radius, 2));
     console.log(Math.ceil(area));
+*/
+var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
 
 
+    function getHighestQuantity(arr) {
+        let highest = {
+            name: 'blank',
+            quantity: 0
+        };
+        arr.forEach(function (item) {
+            if(item.quantity > highest.quantity) {
+                highest = item;
+            }
+        });
+        return highest;
+    }
+
+    console.log(getHighestQuantity(groceries));
 
 })();
