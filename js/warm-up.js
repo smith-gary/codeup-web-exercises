@@ -126,6 +126,7 @@
     let area = Math.PI * (Math.pow(circle.radius, 2));
     console.log(Math.ceil(area));
 */
+    /*
 var groceries = [
     {
         name: "carrots",
@@ -163,5 +164,40 @@ var groceries = [
     }
 
     console.log(getHighestQuantity(groceries));
+    */
 
+    const products = [
+        {
+            name: 'Playstation 5',
+            price: 599.99
+        }, {
+            name: 'Logitech Wireless Mouse',
+            price: 23.99
+        }, {
+            name: 'Macbook Pro',
+            price: 1099.99
+        }, {
+            name: 'GoPro HERO10',
+            price: 399.99
+        }, {
+            name: '12" & 6" Metal Ruler Set',
+            price: 5.99
+        }]
+    function sortByName(arr) {
+        const sortedInfo = arr.sort(function(a, b){
+            let nameA = a.name.toLowerCase();
+            let nameB = b.name.toLowerCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        })
+        // console.log(sortedInfo);
+        return sortedInfo;
+    }
+
+    console.log(sortByName(products));
 })();
