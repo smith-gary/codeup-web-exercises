@@ -166,6 +166,7 @@ var groceries = [
     console.log(getHighestQuantity(groceries));
     */
 
+    /*
     const products = [
         {
             name: 'Playstation 5',
@@ -200,4 +201,42 @@ var groceries = [
     }
 
     console.log(sortByName(products));
+    */
+
+    var bBallPlayers = [
+        {
+            name: "Hakeem Olajuwon",
+            height: 213
+        }, {
+            name: "Muggsy Bogues",
+            height: 160
+        }, {
+            name: "Chris Paul",
+            height: 183
+        }, {
+            name: "Bol Bol",
+            height: 218
+        }, {
+            name: "Moochie Norris",
+            height: 185
+        }, {
+            name: "Manu Ginobili",
+            height: 198
+        }
+    ];
+
+    let lowestHeight = function (arr) {
+        let lowest = {
+            name: 'blank',
+            height: 500
+        };
+        arr.forEach(function (item) {
+            if(item.height < lowest.height) {
+                lowest = item;
+            }
+        })
+        return lowest;
+    }
+    console.log(lowestHeight(bBallPlayers));
+
 })();
