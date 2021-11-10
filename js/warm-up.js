@@ -202,7 +202,7 @@ var groceries = [
 
     console.log(sortByName(products));
     */
-
+    /*
     var bBallPlayers = [
         {
             name: "Hakeem Olajuwon",
@@ -238,5 +238,33 @@ var groceries = [
         return lowest;
     }
     console.log(lowestHeight(bBallPlayers));
+    */
 
+    var myCharacter = {
+        name: 'Blade',
+        hitPoints: 100,
+        class: 'Warrior',
+        abilities: {
+            attack: function(obj) {
+                console.log(`${myCharacter.name} hit ${obj.name} for ${myCharacter.weapon.damage} damage!`)
+                obj.hitPoints -= myCharacter.weapon.damage;
+                console.log(`${obj.name} has ${obj.hitPoints} hit points left!`)
+            },
+        },
+        magicPoints: 0,
+        weapon: {
+            name: 'Silver Sabre',
+            damage: 16,
+            type: 'sword'
+        }
+    }
+
+    var enemy = {
+        name: 'Savage Orc',
+        hitPoints: 100,
+        class: 'Warrior',
+        magicPoints: 0,
+    }
+
+    myCharacter.abilities.attack(enemy);
 })();
