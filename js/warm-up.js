@@ -240,6 +240,7 @@ var groceries = [
     console.log(lowestHeight(bBallPlayers));
     */
 
+    /*
     var myCharacter = {
         name: 'Blade',
         hitPoints: 100,
@@ -267,4 +268,11 @@ var groceries = [
     }
 
     myCharacter.abilities.attack(enemy);
+     */
+
+    let randomEl = function (arr) {
+        return arr[Math.floor((Math.random()*arr.length))];
+    }
+
+    console.log(randomEl(['bob', 'we', 'had', 'a', 'baby', 'its', 'a', 'boy']));
 })();
