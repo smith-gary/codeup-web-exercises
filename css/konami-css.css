@@ -1,0 +1,14 @@
+body {
+    background-color: burlywood;
+}
+.chessboard-container {
+    display: flex;
+    justify-content: center;
+    margin: 5em;
+    padding: 1em;
+    background-color: black;
+}
+.chessboard {
+    max-width: 600px;
+    border: 5px solid burlywood;
+}

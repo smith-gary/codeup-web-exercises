@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Konami Code</title>
+  <link rel="stylesheet" href="css/konami-css.css">
+</head>
+<body>
+<h1>Enter the code to find out how to win in two moves...</h1>
+<div class="chessboard-container">
+  <img src="img/starter-chess.jpeg" alt="chessboard pieces" class="chessboard">
+  <audio src="audio/got-em.mp3" class="gotem"></audio>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--<script src="/js/jquery.js"></script>-->
+<script>
+  $(document).ready(function() {
+  "use strict";
+
+  $(document).keyup(function(event){
+    console.log(event.keyCode);
+  });
+
+  // const konamiCode = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a', 'enter'];
+  const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+  const konamiCode1 = [38, 38, 40]
+  const konamiCode2 = [38, 38, 40, 40, 37, 39];
+  const konamiCode3 = [38, 38, 40, 40, 37, 39, 37, 39, 66];
+  let userInput = [];
+  function checkCode () {
+    if (userInput.length === konamiCode.length) {
+      for (let i = 0; i < userInput.length; i++) {
+        for (let j = 0; j < konamiCode.length; j++) {
+          if(userInput[i] === konamiCode[j]) {
+            $('h1').html('CHECKMATE');
+            $('h1').css('margin', '3em 0');
+            $('.chessboard').attr('src', 'img/checkmate.png');
+            $('.gotem').trigger('play');
+          }
+        }
+      }
+    } else {
+      $('h1').html('Reload and try again...')
+      $('.chessboard').attr('src', 'img/red-x.jpeg');
+    }
+  }
+  function checkStepOne() {
+    if (userInput.length === konamiCode1.length) {
+      for (let i = 0; i < userInput.length; i++) {
+        for (let j = 0; j < konamiCode1.length; j++) {
+          if (userInput[i] === konamiCode1[j]) {
+            $('h1').html('Getting there...').css('margin', '3em 0 0 8em');
+            $('.chessboard').attr('src', 'img/step-one.png');
+          }
+        }
+      }
+    }
+  }
+    function checkStepTwo() {
+      if (userInput.length === konamiCode2.length) {
+        for (let i = 0; i < userInput.length; i++) {
+          for (let j = 0; j < konamiCode2.length; j++) {
+            if (userInput[i] === konamiCode2[j]) {
+              $('h1').html('Warmer...');
+              $('h1').css({
+                'text-align': 'center',
+                'margin': '3em 0 0 8em'
+              });
+              $('.chessboard').attr('src', 'img/step-two.png');
+            }
+          }
+        }
+      }
+    }
+
+    function checkStepThree() {
+      if (userInput.length === konamiCode3.length) {
+        for (let i = 0; i < userInput.length; i++) {
+          for (let j = 0; j < konamiCode3.length; j++) {
+            if (userInput[i] === konamiCode3[j]) {
+              $('h1').html('ALMOST THERE...');
+              $('h1').css('margin', '1em 0 0 15em');
+              $('.chessboard').attr('src', 'img/step-three.png');
+            }
+          }
+        }
+      }
+    }
+
+  $(document).keydown(function(event) {
+    const inputs = event.keyCode;
+    userInput.push(inputs);
+  });
+
+  $(document).keydown(function(event) {
+    if (event.keyCode === 40) {
+      checkStepOne();
+    }
+  })
+
+  $(document).keydown(function(event) {
+    if (event.keyCode === 39) {
+      checkStepTwo();
+    }
+  })
+
+  $(document).keydown(function(event) {
+    if (event.keyCode === 66) {
+      checkStepThree();
+    }
+  })
+
+  $(document).keydown(function(event) {
+    if (event.keyCode === 13) {
+      console.log(userInput);
+      checkCode();
+    }
+  })
+
+  });
+</script>
+</body>
+</html>
