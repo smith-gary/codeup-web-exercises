@@ -6,87 +6,72 @@
   <link rel="stylesheet" href="css/konami-css.css">
 </head>
 <body>
-<h1>Enter the code to find out how to win in two moves...</h1>
-<div class="chessboard-container">
-  <img src="img/starter-chess.jpeg" alt="chessboard pieces" class="chessboard">
-  <audio src="audio/got-em.mp3" class="gotem"></audio>
+<div class="outer-border">
+  <div class="third-border">
+        <h1>Enter the code to find out how to win in two moves...</h1>
+    <div class="second-border">
+      <div class="chessboard-container">
+        <img alt="chessboard pieces" class="chessboard">
+        <audio src="audio/got-em.mp3" class="gotem"></audio>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<!--<script src="/js/jquery.js"></script>-->
 <script>
   $(document).ready(function() {
   "use strict";
-
+  $('.chessboard').attr('src', 'img/starter-chess.jpeg');
   $(document).keyup(function(event){
     console.log(event.keyCode);
   });
 
-  // const konamiCode = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a', 'enter'];
   const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
   const konamiCode1 = [38, 38, 40]
   const konamiCode2 = [38, 38, 40, 40, 37, 39];
   const konamiCode3 = [38, 38, 40, 40, 37, 39, 37, 39, 66];
   let userInput = [];
+  // FUNCTION TO CHECK IF THE CODE WAS COMPLETELY CORRECT ///////////
   function checkCode () {
-    if (userInput.length === konamiCode.length) {
-      for (let i = 0; i < userInput.length; i++) {
-        for (let j = 0; j < konamiCode.length; j++) {
-          if(userInput[i] === konamiCode[j]) {
-            $('h1').html('CHECKMATE');
-            $('h1').css('margin', '3em 0');
-            $('.chessboard').attr('src', 'img/checkmate.png');
-            $('.gotem').trigger('play');
-          }
-        }
-      }
-    } else {
-      $('h1').html('Reload and try again...')
-      $('.chessboard').attr('src', 'img/red-x.jpeg');
+    if (userInput.length === konamiCode.length && userInput.every( (a, b) => a === konamiCode[b])){
+      $('h1').html('CHECKMATE');
+      $('h1').css('margin', '3em 0');
+      $('.chessboard').attr('src', 'img/checkmate.png');
+      $('.gotem').trigger('play');
+      } else {
+        $('h1').html('Reload and try again...')
+        $('h1').css('margin', 'auto')
+        $('.chessboard').attr('src', 'img/red-x.jpeg');
     }
   }
+    // FUNCTION TO CHECK IF THE CODE WAS CORRECT UP TO THE THIRD INPUT ///////////
   function checkStepOne() {
-    if (userInput.length === konamiCode1.length) {
-      for (let i = 0; i < userInput.length; i++) {
-        for (let j = 0; j < konamiCode1.length; j++) {
-          if (userInput[i] === konamiCode1[j]) {
-            $('h1').html('Getting there...').css('margin', '3em 0 0 8em');
-            $('.chessboard').attr('src', 'img/step-one.png');
-          }
-        }
-      }
+    if (userInput.length === konamiCode1.length&& userInput.every( (a, b) => a === konamiCode1[b])){
+      $('h1').html('Getting there...').css('margin', '3em 0 0 6em');
+      $('.chessboard').attr('src', 'img/step-one.png');
     }
   }
+
+    // FUNCTION TO CHECK IF THE CODE WAS CORRECT UP TO THE 6TH INPUT ///////////
     function checkStepTwo() {
-      if (userInput.length === konamiCode2.length) {
-        for (let i = 0; i < userInput.length; i++) {
-          for (let j = 0; j < konamiCode2.length; j++) {
-            if (userInput[i] === konamiCode2[j]) {
-              $('h1').html('Warmer...');
-              $('h1').css({
-                'text-align': 'center',
-                'margin': '3em 0 0 8em'
-              });
-              $('.chessboard').attr('src', 'img/step-two.png');
-            }
-          }
-        }
+      if (userInput.length === konamiCode2.length && userInput.every( (a, b) => a === konamiCode2[b])){
+        $('h1').html('Warmer...');
+        $('h1').css('text-align', 'center');
+        $('h1').css('margin-left', '8em');
+        $('.chessboard').attr('src', 'img/step-two.png');
       }
     }
 
+// FUNCTION TO CHECK IF THE CODE WAS CORRECT UP TO THE NINTH INPUT ///////////
     function checkStepThree() {
-      if (userInput.length === konamiCode3.length) {
-        for (let i = 0; i < userInput.length; i++) {
-          for (let j = 0; j < konamiCode3.length; j++) {
-            if (userInput[i] === konamiCode3[j]) {
-              $('h1').html('ALMOST THERE...');
-              $('h1').css('margin', '1em 0 0 15em');
-              $('.chessboard').attr('src', 'img/step-three.png');
-            }
-          }
-        }
+      if (userInput.length === konamiCode3.length&& userInput.every( (a, b) => a === konamiCode3[b])){
+        $('h1').html('ALMOST THERE...');
+        $('h1').css('margin', '1em 0 0 15em');
+        $('.chessboard').attr('src', 'img/step-three.png');
       }
     }
 
+// KEY DOWN FUNCTION EVENTS ///////////////
   $(document).keydown(function(event) {
     const inputs = event.keyCode;
     userInput.push(inputs);
