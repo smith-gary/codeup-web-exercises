@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        #wrong-info {
+            display: none;
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <main>
@@ -17,9 +23,28 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
+            <div id="wrong-info">"We're sorry, your username or password is incorrect. Please try again."</div>
+            <br>
             <button class="btn btn-block">Login</button>
         </fieldset>
     </form>
 </main>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossOrigin="anonymous"></script>
+<script>
+
+    let loginBtn = $('.btn');
+    let error = $('#wrong-info');
+    let correctUsername = 'regulus2021';
+    let correctPassword = 'gocodeup';
+
+    loginBtn.click(function(e) {
+        e.preventDefault();
+        let username = $('#username').val();
+        let password = $('#password').val();
+        if (username !== correctUsername || password !== correctPassword) {
+            error.css('display',  'inline-block');
+        }
+    })
+</script>
 </body>
 </html>
