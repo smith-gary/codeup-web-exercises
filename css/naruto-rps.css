@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Naruto';
+    src: url('/ninja-naruto-font/NinjaNaruto-YOn4.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: url("/img/nrps-bg.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.title-bar {
+    margin: 4em;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+.title {
+    text-align: center;
+    font-family: 'Naruto';
+    font-size: 64px;
+    background: linear-gradient(to right, yellow, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-content {
+    /*display: flex;*/
+    /*background: none;*/
+}
+
+.instructions-container {
+    margin: 2em;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+
+.instructions {
+    text-align: center;
+    padding: 1em;
+    font-family: 'Voltaire', sans-serif;
+    font-size: 2em;
+    color: rgba(217,255,248,0.58);
+}
+
+.character-container {
+    display: flex;
+    max-height: 50vh;
+    margin: 2em;
+}
+
+.computer-character, .player-character {
+    flex: 1;
+    padding: 1em;
+}
+
+.character-name {
+    color: white;
+}
+
+.vs-img {
+
+
+}
+/*.extra {*/
+/*    align-items: center;*/
+/*}*/
