@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/naruto-rps.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+    </style>
+</head>
+<body>
+    <header class="title-bar">
+        <h1 class="title">CHUNIN EXAMS</h1>
+    </header>
+    <main class="main-content container">
+        <div class="instructions-container row">
+            <div class="instructions col-12">
+            <p class>
+                This is stage 2 of the exams<br>
+                Win this round and move on, lose and you are disqualified<br>
+                Choose wisely or deal with the consequences...<br>
+            </p>
+            </div>
+        </div>
+        <div class="rps container">
+            <div class="rps-selections row">
+                <div class="rock col-4">
+                    <img class="rock-img img-fluid w-100 height: auto" src="img/rock.jpeg" alt="image for rock">
+                </div>
+                <div class="paper col-4">
+                    <img src="img/paper.jpeg" alt="image for paper" class="paper-img img-fluid w-100 height: auto">
+                </div>
+                <div class="scissors col-4">
+                    <img src="img/scissors.jpeg" alt="image for scissors" class="scissors-img img-fluid w-100 height: auto">
+                </div>
+            </div>
+        </div>
+        <div class="character-container row">
+            <div class="player-character col-4 ">
+                <h1 class="character-name">Naruto Uzamaki</h1>
+                <img class="naruto mx-auto img-fluid w-100 height: auto" src="img/naruto-standing.png" alt="naruto">
+            </div>
+            <div class="extra col-4">
+                <img class="vs-img img-fluid m-auto" src="img/vs-img.png" alt="versus image">
+            </div>
+            <div class="computer-character col-4">
+                <h1 class="character-name">Neji</h1>
+                <img class="neji mx-auto img-fluid w-100 height: auto" src="img/neji-standing%20.jpeg" alt="neji">
+            </div>
+        </div>
+
+    </main>
+    <footer class="record">
+
+    </footer>
+
+<!-- SCRIPTS ------->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/naruto-rps.js"></script>
+</body>
+</html>
