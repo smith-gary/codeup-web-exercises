@@ -6,17 +6,11 @@
   <link rel="stylesheet" href="css/konami-css.css">
 </head>
 <body>
-<div class="outer-border">
-  <div class="third-border">
-        <h1>Enter the code to find out how to win in two moves...</h1>
-    <div class="second-border">
-      <div class="chessboard-container">
-        <img alt="chessboard pieces" class="chessboard">
-        <audio src="audio/got-em.mp3" class="gotem"></audio>
-      </div>
-    </div>
+    <h1>Enter the code to find out how to win in two moves...</h1>
+  <div class="chessboard-container">
+    <img alt="chessboard pieces" class="chessboard">
+    <audio src="audio/got-em.mp3" class="gotem"></audio>
   </div>
-</div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
@@ -35,7 +29,8 @@
   function checkCode () {
     if (userInput.length === konamiCode.length && userInput.every( (a, b) => a === konamiCode[b])){
       $('h1').html('CHECKMATE');
-      $('h1').css('margin', '3em 0');
+      $('h1').css('margin', 'auto');
+      $('h1').css('color', 'red');
       $('.chessboard').attr('src', 'img/checkmate.png');
       $('.gotem').trigger('play');
       } else {
