@@ -62,10 +62,20 @@ body {
     color: white;
 }
 
-.vs-img {
-
-
+.extra {
+display: inline-block;
+align-self: center;
 }
-/*.extra {*/
-/*    align-items: center;*/
-/*}*/
+
+.character-name {
+    text-align: center;
+}
+
+.scores, .winner {
+    color: white;
+}
+
+.btn {
+    color: white;
+    border: solid 3px white;
+}
