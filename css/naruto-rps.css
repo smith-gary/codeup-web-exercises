@@ -30,6 +30,7 @@ body {
 }
 
 .main-content {
+    max-width: 1500px;
     /*display: flex;*/
     /*background: none;*/
 }

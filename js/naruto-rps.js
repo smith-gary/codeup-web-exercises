@@ -31,18 +31,28 @@ $(document).ready(function() {
     );
  /// CHECK TO SEE WHO THE WINNER IS ///
     function checkWinner(player, computer) {
+    console.log(player);
+    console.log(computer);
         if (player === 'Rock' && computer === 'Paper') {
              return 'Computer';
-         } else if (player == 'Rock' && computer == 'Scissors') {
+         }
+        if (player === 'Rock' && computer === 'Scissors') {
              return 'Player';
-         } else if (player == 'Paper' && computer == 'Scissors') {
+         }
+        if (player === 'Paper' && computer === 'Scissors') {
              return 'Computer';
-         } else if (player == 'Paper' && computer == 'Rock') {
+         }
+        if (player === 'Paper' && computer === 'Rock') {
              return 'Player';
-         } else if (player == 'Scissors' && computer == 'Rock') {
+         }
+        if (player === 'Scissors' && computer === 'Rock') {
              return 'Computer';
-         } else if (player == 'Scissors' && computer == 'Paper') {
+         }
+        if (player === 'Scissors' && computer === 'Paper') {
             return 'Player';
+        }
+        if (player === computer) {
+            return 'Draw';
         }
     }
  //// DISPLAYS WINNER IN WINNER DIV ///
@@ -53,40 +63,60 @@ $(document).ready(function() {
 
     $('.btn').click(function pickRPS(e) {
         let playerSelect = e.target.innerText;
-        console.log(playerSelect);
         let compSelect = Math.random();
-        let result = checkWinner(playerSelect, compSelect);
-        console.log(result);
-        if (result === 'Player'){
-            result += ' wins!';
-            //update score
-            winnerScores[0]++;
-        }
-
-        if (result === 'Computer'){
-            result += ' wins!';
-            winnerScores[1]++;
-        }
-        if (result === 'Draw'){
-            result += '. It\'s a tie!'
-        }
-
         if (compSelect < .34){
             compSelect = 'Rock';
         } else if (compSelect <= .67){
             compSelect = 'Paper';
         } else {
-            compSelect= 'Scissors';
+            compSelect = 'Scissors';
         }
-        console.log(compSelect);
 
+        let result = checkWinner(playerSelect, compSelect);
+        console.log(result);
+        if (result === 'Player') {
+            result += ' wins!';
+            //update score
+            winnerScores[0]++;
+        }
 
+        if (result === 'Computer') {
+            result += ' wins!';
+            winnerScores[1]++;
+        }
+        if (result === 'Draw') {
+            result += '. It\'s a tie!'
+        }
 
        /// UPDATES SCORE IN SCORES SECTION ///
-        $('.scores').html(`Player: ${winnerScores[0]} <br> Computer: ${winnerScores[1]} `);
+        $('.scores').html(`Player: ${winnerScores[0]} <br> Computer: ${winnerScores[1]}`);
 
         ///// PLAYER AND COMPUTER NAMES
         winnings(`Player: ${playerSelect} <br> Computer: ${compSelect} <br> ${result}`);
 
     });
 });
+
+// switch (player, computer) {
+//     case player === 'Rock' && computer === 'Paper':
+//         return 'Computer';
+//
+//     case player === 'Rock' && computer === 'Scissors':
+//         return 'Player';
+//
+//     case player === 'Paper' && computer === 'Scissors':
+//         return 'Computer';
+//
+//     case player === 'Paper' && computer === 'Rock':
+//         return 'Player';
+//
+//     case player === 'Scissors' && computer === 'Rock':
+//         return 'Computer';
+//
+//     case player === 'Scissors' && computer === 'Paper':
+//         return 'Player';
+//
+//     default:
+//         return 'Draw';
+//
+// }
