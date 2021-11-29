@@ -1,14 +1,9 @@
 $(document).ready(function() {
     'use strict';
-
-    // $('dd').addClass('invisible');
-
-    // $('.invisible').css('visibility', 'hidden');
-    $('dt').wrap('<h1></h1>')
+    $('dt').wrap('<h2></h2>')
     $('dd').wrap('<p></p>')
-    $('.button').html('<btn class="toggler" type="button">Toggle Invisibility</btn>');
     $('.toggler').css('border', 'solid 3px black');
-    $('.toggler').css('font-size', '30px');
+    $('.toggler').css('font-size', '20px');
 
     $('.toggler').click(function(e) {
         e.preventDefault();
@@ -21,6 +16,27 @@ $(document).ready(function() {
             $(this).css('background-color', 'yellow');
         });
     });
-    $('p').css('font-size', '20px');
+    $('p').css('font-size', '16px');
+    $('.highlighter').css('font-size', '20px');
+    $('.highlighter').click(function() {
+        $('ul').each(function(){
+            $(this).children().last().css('background-color', 'yellow');
+        });
+    });
 
+    $('.first-title').click(function() {
+        $('.first-parks').css('font-weight', 'bold');
+    });
+
+    $('.second-title').click(function() {
+        $('.second-parks').css('font-weight', 'bold');
+    });
+
+    $('.third-title').click(function() {
+        $('.third-parks').css('font-weight', 'bold');
+    });
+
+    $('li').click(function() {
+        $(this).parent().children().first().css('color', 'blue');
+    })
 });
