@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body>
-    <div id="posts">
+<body class="bg-secondary">
+    <div class="card mx-auto my-5 w-75 text-white bg-dark border-secondary">
+        <div id="posts">
 
+        </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     (function() {
         $.get("/data/blog.json").done(function(data) {
             data.forEach(function(post) {
-                let title = '<h1>' + post.title + '</h1>';
-                let content = '<p>' + post.content + '</p>';
+                let title = '<h1 class="card-header">' + post.title + '</h1>';
+                let content = '<p class="card-body m-3">' + post.content + '</p>';
                 let categories = post.categories;
                 console.log(categories);
-                let date = '<h3>' + post.date + '</h3>';
+                let date = '<h3 class="card-footer bg-info text-dark text-center mt-3">' + post.date + '</h3>';
                 $('#posts').append(title + content);
                 for(let i = 0; i < categories.length; i++){
-                    $('#posts').append('<ul><li>' + categories[i] + '</ul></li>')
+                    $('#posts').append('<ul class="list-group w-25 my-1"><li class="list-group-item text-dark ml-5">' + '↠ ↠ ' + categories[i] + '</ul></li>')
                 }
                 $('#posts').append(date);
             });
