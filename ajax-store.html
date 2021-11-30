@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-
 <h1 class="text-center text-uppercase bg-secondary">My Tool Store</h1>
 
 <table id="products" class="container">
@@ -20,10 +19,29 @@
             <th class="col-3">Categories</th>
         </tr>
     </thead>
-    <tbody id="insertProducts"></tbody>
+    <tbody id="insertProducts">
+
+    </tbody>
 </table>
 <button class="refresh btn btn-block btn-dark btn-lg mt-5" type="button">Refresh Inventory</button>
+<br>
+<div id="tool-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="2000">
+            <img src="img/tool-img-one.jpeg" class="d-block w-100" alt="random tools">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+            <img src="img/tool-img-two.jpeg" class="d-block w-100" alt="random tools">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+            <img src="img/tool-img-three.jpeg" class="d-block w-100" alt="random tools">
+        </div>
+    </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -40,7 +58,7 @@
             data.forEach(function (product) {
                 let title = '<tr class="row"><td class="col-3 mt-3">' + product.title + '</td>';
                 let quant = '<td class="col-3 mt-3">' + product.quantity + '</td>';
-                let price = '<td class="col-3 mt-3">' + product.price + '</td>';
+                let price = '<td class="col-3 mt-3">' + '$' + product.price + '</td>';
                 let category = '<td class="col-3 mt-3">' + product.categories + '</td></tr>';
                 $('#insertProducts').append(title + quant + price + category);
             })
@@ -51,6 +69,7 @@
     $('.refresh').click(function(){
         getData();
     })
+    $('#tool-carousel').on(util.js)
 })();
 </script>
 
