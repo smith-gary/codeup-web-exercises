@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+
+<h1 class="text-center text-uppercase bg-secondary">My Tool Store</h1>
+
+<table id="products" class="container">
+    <thead>
+        <tr class="row">
+            <th class="col-3">Title</th>
+            <th class="col-3">Quantity</th>
+            <th class="col-3">Price</th>
+            <th class="col-3">Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button class="refresh btn btn-block btn-dark btn-lg mt-5" type="button">Refresh Inventory</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    function getData() {
+        $.get('/data/inventory.json').done(function (data) {
+            $('#insertProducts').html('');
+            data.forEach(function (product) {
+                let title = '<tr class="row"><td class="col-3 mt-3">' + product.title + '</td>';
+                let quant = '<td class="col-3 mt-3">' + product.quantity + '</td>';
+                let price = '<td class="col-3 mt-3">' + product.price + '</td>';
+                let category = '<td class="col-3 mt-3">' + product.categories + '</td></tr>';
+                $('#insertProducts').append(title + quant + price + category);
+            })
+            console.log(data);
+        })
+    }
+
+    $('.refresh').click(function(){
+        getData();
+    })
+})();
+</script>
+
+</body>
+</html>
