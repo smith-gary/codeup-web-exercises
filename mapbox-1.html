@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Box One</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+
+<div id='map' style='width: 100%; height: 700px;'></div>
+<button id="zoom" type="button">Zoom in</button>
+
+<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    const accessToken = 'pk.eyJ1IjoiZ2FyeS1zbWl0aDk5IiwiYSI6ImNrd3BuNGkwejBlZ2Qydm55N3h2djBmZWcifQ.zmlHt0lzSOl4wYEs_P-KMg';
+    mapboxgl.accessToken = accessToken;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+
+
+    setTimeout(function() {
+        map.flyTo({
+            center: [-97.04029232245753, 32.900313250735266],
+            // zoom: 9,
+            essential: true,
+        });
+        map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
+    }, 5000);
+
+
+</script>
+</body>
+</html>
