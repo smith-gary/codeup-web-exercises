@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map API Exercise</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 100%; height: 700px;'></div>
+
+<button class="zoom-5" type="button">Zoom 5</button>
+<button class="zoom-15" type="button">Zoom 15</button>
+<button class="zoom-20" type="button">Zoom 20</button>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    const accessToken = 'pk.eyJ1IjoiZ2FyeS1zbWl0aDk5IiwiYSI6ImNrd3FsM2g2eDAzN2MydW5tcHVweXgwN3EifQ.IyTD7IXXHUv4CjLhk6_NIA';
+    mapboxgl.accessToken = accessToken;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    // geocode("2422 Cadara Woods, San Antonio, TX 78259", accessToken).then(function(result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(17);
+    // });
+    //
+    // const bsskPopup = new mapboxgl.Popup()
+    //     .setHTML("<p>Bourbon Street Seafood Kitchen</p>");
+    //
+    // const markerEl = document.createElement('div');
+    // markerEl.id = 'marker';
+    //
+    // const marker = new mapboxgl.Marker()
+    //     .setLngLat([-98.44405316548551, 29.60371214913383])
+    //     .setPopup(bsskPopup)
+    //     .addTo(map);
+    //
+    // $('.zoom-5').click(function() {
+    //     map.setZoom(5)
+    // });
+    // $('.zoom-15').click(function() {
+    //     map.setZoom(15)
+    // });
+    // $('.zoom-20').click(function() {
+    //     map.setZoom(20)
+    // });
+
+    const favPlaces = [
+        {
+        address: [-98.44405316548551, 29.60371214913383],
+        popupHTML: 'Great Seafood'
+    },{
+        address: [-98.61143891644234, 29.593227317266084],
+        popupHTML: 'Great everything'
+        }, {
+        address: [-98.51033625480561, 29.61694143758779],
+        popupHTML: 'Love that spicy chicken sandwich'
+        }
+    ];
+
+    let markers = [];
+
+    function showFavPlaces(info, map) {
+        info.forEach(function() {
+            
+        })
+    }
+
+showFavPlaces(favPlaces, map);
+
+
+</script>
+</body>
+</html>

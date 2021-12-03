@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Box Two</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 100%; height: 700px;'></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    const accessToken = 'pk.eyJ1IjoiZ2FyeS1zbWl0aDk5IiwiYSI6ImNrd3FsM2g2eDAzN2MydW5tcHVweXgwN3EifQ.IyTD7IXXHUv4CjLhk6_NIA';
+    mapboxgl.accessToken = accessToken;
+        const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-73.99135397295963, 40.7209104928516], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-74.04448822786178, 40.68930482852703])
+        .addTo(map);
+    var libertyPopup = new mapboxgl.Popup()
+        .setHTML("<p>Statue Of Liberty</p>")
+        .addTo(map)
+    marker.setPopup(libertyPopup);
+
+</script>
+</body>
+</html>
