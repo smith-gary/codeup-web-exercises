@@ -17,6 +17,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
 <script>
     const accessToken = MAPBOX_KEY;
     mapboxgl.accessToken = accessToken;
@@ -27,57 +28,61 @@
         zoom: 9 // starting zoom
     });
 
-    // geocode("2422 Cadara Woods, San Antonio, TX 78259", accessToken).then(function(result) {
-    //     console.log(result);
-    //     map.setCenter(result);
-    //     map.setZoom(17);
-    // });
-    //
-    // const bsskPopup = new mapboxgl.Popup()
-    //     .setHTML("<p>Bourbon Street Seafood Kitchen</p>");
-    //
-    // const markerEl = document.createElement('div');
-    // markerEl.id = 'marker';
-    //
-    // const marker = new mapboxgl.Marker()
-    //     .setLngLat([-98.44405316548551, 29.60371214913383])
-    //     .setPopup(bsskPopup)
-    //     .addTo(map);
-    //
-    // $('.zoom-5').click(function() {
-    //     map.setZoom(5)
-    // });
-    // $('.zoom-15').click(function() {
-    //     map.setZoom(15)
-    // });
-    // $('.zoom-20').click(function() {
-    //     map.setZoom(20)
-    // });
+    geocode("103 9th St, San Antonio, TX 78215", accessToken).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(18);
+    });
+
+    const bsskPopup = new mapboxgl.Popup()
+        .setHTML("<p>Bourbon Street Seafood Kitchen</p>");
+
+    const markerEl = document.createElement('div');
+    markerEl.id = 'marker';
+
+    const marker = new mapboxgl.Marker()
+        .setLngLat([-98.48403203305108, 29.434989015980513])
+        .setPopup(bsskPopup)
+        .addTo(map);
+
+    $('.zoom-5').click(function() {
+        map.setZoom(5)
+    });
+    $('.zoom-15').click(function() {
+        map.setZoom(15)
+    });
+    $('.zoom-20').click(function() {
+        map.setZoom(20)
+    });
 
     const favPlaces = [
         {
-        address: [-98.44405316548551, 29.60371214913383],
+        address: '22015 W I-10 UNIT 101, San Antonio, TX 78257',
         popupHTML: 'Great Seafood'
     },{
-        address: [-98.61143891644234, 29.593227317266084],
+        address: '15900 La Cantera Pkwy Suite 21200, San Antonio, TX 78256',
         popupHTML: 'Great everything'
         }, {
-        address: [-98.51033625480561, 29.61694143758779],
+        address: '5195 De Zavala Rd, San Antonio, TX 78249',
         popupHTML: 'Love that spicy chicken sandwich'
         }
     ];
 
-    let markers = [];
+    favPlaces.forEach(function addMapObjects(places) {
+        geocode(places.address, MAPBOX_KEY).then(function (result) {
+            console.log(result);
+            const newMarker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map)
+                .setPopup(new mapboxgl.Popup()
+                    .setLngLat(result)
+                    .setHTML(places.popupHTML)
+                    .addTo(map)
 
-    function showFavPlaces(info, map) {
-        info.forEach(function() {
-
-        })
-    }
-
-showFavPlaces(favPlaces, map);
-
-
+                )
+                .togglePopup();
+        });
+    });
 </script>
 </body>
 </html>
