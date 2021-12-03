@@ -13,7 +13,7 @@
 <div id='map' style='width: 100%; height: 700px;'></div>
 <button id="zoom" type="button">Zoom in</button>
 
-<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     const accessToken = 'pk.eyJ1IjoiZ2FyeS1zbWl0aDk5IiwiYSI6ImNrd3BuNGkwejBlZ2Qydm55N3h2djBmZWcifQ.zmlHt0lzSOl4wYEs_P-KMg';
@@ -25,8 +25,6 @@
         zoom: 12 // starting zoom
     });
 
-
-
     setTimeout(function() {
         map.flyTo({
             center: [-97.04029232245753, 32.900313250735266],
@@ -36,6 +34,9 @@
         map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
     }, 5000);
 
+    $('#zoom').click(function() {
+        map.zoomIn();
+    });
 
 </script>
 </body>
