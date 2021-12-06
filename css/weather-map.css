@@ -1,0 +1,19 @@
+.weather-cards {
+
+}
+.card {
+    width: 100%;
+    block-size: fit-content;
+    margin: 0 .5em;
+    background-color: black;
+    border: 1px solid white;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.geoInput {
+    height: 3em;
+}
