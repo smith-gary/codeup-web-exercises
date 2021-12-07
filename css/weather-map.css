@@ -1,12 +1,12 @@
-.weather-cards {
-
+body {
+    background-color: lightskyblue;
 }
+
 .card {
     width: 100%;
-    block-size: fit-content;
-    margin: 0 .5em;
-    background-color: black;
-    border: 1px solid white;
+    height: 150px;
+    background-color: lightgrey;
+    border: 1px solid black;
 }
 
 img {
@@ -16,4 +16,13 @@ img {
 
 .geoInput {
     height: 3em;
+}
+
+h4 {
+    margin-left: .5em;
+    color: black;
+}
+
+.card-body {
+    font-weight: bold;
 }

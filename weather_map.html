@@ -11,65 +11,64 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="css/weather-map.css">
 </head>
-<body class="bg-dark">
-<h1 class="bg-primary text-white">Weather Map</h1>
-<div class="geoInput m-3">
-    <!--    <button type="button" class="btn btn-primary">Weather Me!</button>-->
-</div>
+<body>
+<h1 class="bg-secondary text-white text-center">Daily Weather</h1>
+
+<!-- GEOCODER DIV --->
+<div class="geoInput m-3"></div>
 
 <div class="weather-cards container-fluid w-100">
     <div class="row">
     <!--- MAP ------>
-        <div class="d-flex flex-column col-6">
-            <!--        style='width: 50%; height: 500px-->
-            <div id='map' style='width: 100%; height: 700px'></div>
+        <div class="d-flex col-12 w-100 mb-3">
+            <div id='map' style='width: 100%; height: 350px'></div>
         </div>
         <!--- DAY ONE ------>
-        <div class="d-flex flex-column col-6 w-100 pl-0 text-white">
-            <div class="card row" >
+        <div class="d-flex col-12 w-100 text-dark">
+            <div class="card" >
                 <img src="" alt="weather icon" class="weather-icon-1">
+                <h4 class="date-1 card-title"></h4>
                 <div class="card-body">
-                    <h5 class="date-1 card-title"></h5>
                     <div class="weather-1 class-text"></div>
                 </div>
             </div>
 
             <!--- DAY TWO ------>
 
-            <div class="card row">
+            <div class="card">
                 <img src="" alt="weather icon" class="weather-icon-2">
+                    <h4 class="date-2 card-title"></h4>
                 <div class="card-body">
-                    <h5 class="date-2 card-title"></h5>
                     <div class="weather-2 class-text"></div>
                 </div>
             </div>
 
             <!--- DAY THREE ------>
 
-            <div class="card row">
+            <div class="card">
                 <img src="" alt="weather icon" class="weather-icon-3">
+                    <h4 class="date-3 card-title"></h4>
                 <div class="card-body">
-                    <h5 class="date-3 card-title"></h5>
                     <div class="weather-3 class-text"></div>
                 </div>
             </div>
 
             <!--- DAY FOUR ------>
 
-            <div class="card row">
+            <div class="card">
                 <img src="" alt="weather icon" class="weather-icon-4">
+                    <h4 class="date-4 card-title"></h4>
                 <div class="card-body">
-                    <h5 class="date-4 card-title"></h5>
                     <div class="weather-4 class-text"></div>
                 </div>
             </div>
 
             <!--- DAY FIVE ------>
 
-            <div class="card row">
+            <div class="card">
                 <img src="" alt="weather icon" class="weather-icon-5">
+                    <h4 class="date-5 card-title"></h4>
                 <div class="card-body">
-                    <h5 class="date-5 card-title"></h5>
                     <div class="weather-5 class-text"></div>
                 </div>
             </div>
@@ -77,15 +76,11 @@
     </div>
 </div>
 
-
-
+<!-- SCRIPT TAGS ---->
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
-      type="text/css">
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/weather-map.js"></script>
