@@ -13,32 +13,32 @@
         description = [];
     };
 
-
         ///// ITERATING THROUGH DAYS TO SETUP 5 DAY FOReCAST /////
+
     const getDate = function(data) {
         for(let i = 0; i < data.daily.length; i++) {
             let dayOfWeek = new Date(data.daily[i].dt * 1000).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
             day.push(dayOfWeek);
-        }
-    }
+        };
+    };
 
     /// ITERATING THROUGH TEMP OF THE DAY /////
 
     const getTemp = function(data) {
         for(let i = 0; i < data.daily.length; i++) {
-            let tempOfDay = '<p> Temp for the day is: ' + data.daily[i].temp.day + '</p>';
+            let tempOfDay = '<p> Temp for the day is: ' + data.daily[i].temp.day + '℉ </p>';
             temp.push(tempOfDay);
-        }
-    }
+        };
+    };
 
     //// ITERATING THROUGH FEELS LIKE TEMP ///////
 
     const getFeelsLike = function(data) {
         for(let i = 0; i < data.daily.length; i++) {
-            let feelsLikeOfDay = '<p> Feels like: ' + data.daily[i].feels_like.day + '</p>';
+            let feelsLikeOfDay = '<p> Feels like: ' + data.daily[i].feels_like.day + '℉ </p>';
             feelsLikeTemp.push(feelsLikeOfDay);
-        }
-    }
+        };
+    };
 
     //// ITERATING THROUGH DESCRIPTION ///////
 
@@ -46,8 +46,8 @@
         for(let i = 0; i < data.daily.length; i++) {
             let descriptionOfDay = '<p>' + data.daily[i].weather[0].description + '</p>';
             description.push(descriptionOfDay);
-        }
-    }
+        };
+    };
 
 
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
@@ -57,11 +57,12 @@
         units: 'imperial',
         APPID: OPEN_WEATHER_KEY
     }).done(function(data) {
-        console.log(data);
+        // console.log(data);
             getDate(data);
             getTemp(data);
             getFeelsLike(data);
             getDescription(data);
+
         //////// DAY ONE ///////
 
         $('.weather-icon-1').attr('src', 'http://openweathermap.org/img/wn/' + data.daily[0].weather[0].icon + '.png') // ICON //
@@ -99,25 +100,24 @@
     const accessToken = MAPBOX_KEY;
     mapboxgl.accessToken = accessToken;
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4916, 29.4252], // starting position [lng, lat]
-        zoom: 12 // starting zoom
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4916, 29.4252],
+        zoom: 12
     });
 
     //// GEOCODER FOR TEXT INPUT /////
+
     const geocoder = new MapboxGeocoder ({
         accessToken: mapboxgl.accessToken,
         marker: {
             draggable: true,
             color: 'red'
         },
-
         mapboxgl: mapboxgl
     });
 
     $('.geoInput').append(geocoder.onAdd(map));
-
 
     ////// DRAGGABLE MARKER /////
 
@@ -137,15 +137,13 @@
         newLon = `${lngLat.lng}`.toString();
     }
     marker.on('dragend', onDragEnd);
+
     ///// FUNCTION TO UPDATE WEATHER AFTER USER INPUT /////
 
     geocoder.on('results', function(results) {
-        // results.preventDefault()
         newLon = results.features[0].center[0].toString();
         newLat = results.features[0].center[1].toString();
-                setTimeout(function() {update();}, 3000);
-        // marker.on('dragend', onDragEnd);
-        // marker.on('dragend', update);
+        setTimeout(function() {update();}, 3000);
         });
 
     /////// FUNCTION/GET REQUEST TO UPDATE WEATHER AFTER MARKER HAS BEEN DRAGGED //////
@@ -197,6 +195,5 @@
     }
 
     marker.on('dragend', update);
-
 
 }());
